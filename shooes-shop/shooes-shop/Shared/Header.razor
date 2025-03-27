@@ -1,4 +1,4 @@
-﻿@inject NavigationManager NavManager
+﻿
 
 <div id="top">
     <div class="shell">
@@ -28,7 +28,7 @@
                     <NavLink class="nav-link" href="/contact">Контакти</NavLink>
                 </li>
             </ul>
-            <button class="btn btn-outline-dark ms-lg-3" onclick="toggleTheme()">🌙</button>
+       
         </div>
     </div>
 </nav>
@@ -37,10 +37,10 @@
   
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="1000">
+                <div class="carousel-item active" data-bs-interval="10000">
                     <img src="./images/carousel2.jpg" class="d-block w-100 carousel-img" alt="...">
                 </div>
-                <div class="carousel-item" data-bs-interval="1000">
+                <div class="carousel-item" data-bs-interval="20000">
                     <img src="./images/carousel1.jpg" class="d-block w-100 carousel-img" alt="...">
                 </div>
                 <div class="carousel-item">
@@ -127,11 +127,7 @@
  *@
 @code {
     private bool collapseNavMenu = false;
-    protected override void OnInitialized()
-    {
-        NavManager.LocationChanged += (sender, args) => StateHasChanged();
-    }
-
+   
     private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
     private void ToggleNavMenu()
     {
